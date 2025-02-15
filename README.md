@@ -18,6 +18,7 @@
 ```html
 <link rel="stylesheet" href="./src/toggle-categories.css">
 <script src="./src/toggle-categories.js"></script>
+```
 
 The script can also be loaded as a module:
 ```html
