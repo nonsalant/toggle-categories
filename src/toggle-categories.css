@@ -1,9 +1,11 @@
 toggle-categories {
 	--toggle-color: #018259;
 	--toggle-height: 1rem;
+	--toggle-categories-bg: #88888830;
 	--toggle-category-color: light-dark(red, hotpink);
 	--toggle-category-height: .8rem;
-
+	--toggle-categories--heading-bg: #88888840;
+	
 	display: block;
 	
 	ul {
@@ -12,7 +14,7 @@ toggle-categories {
 		list-style: none;
 		
 		&:not(ul ul) {
-			background-color: #88888830;
+			background-color: var(--toggle-categories-bg, #88888830);
 			/* width: fit-content; */
 			margin-inline: auto;
 			padding-block-end: .25rem;
@@ -31,7 +33,7 @@ toggle-categories {
 	
 	/* category headings */
 	li:not(li li) > .toggle-input {
-		background-color: #88888840;
+		background-color: var(--toggle-categories--heading-bg, #88888840);
 		justify-content: space-between;
 		font-weight: bold;
 		

@@ -55,5 +55,19 @@ The script can also be loaded as a module:
 <li><label><input type="checkbox" id="item-1"> Item 1</label></li>
 ```
 
+## Styling
+You can override these CSS custom properties to change the appearance of the component by adding the following CSS anywhere:
+```css
+toggle-categories ul {
+	--toggle-color: #018259;
+	--toggle-height: 1rem;
+	--toggle-categories-bg: #88888830;
+	--toggle-category-color: light-dark(red, hotpink);
+	--toggle-category-height: .8rem;
+	--toggle-categories--heading-bg: #88888840;
+}
+```
+Note: `ul` added in the selector above for extra specificity, to override the settings in toggle-categories.css.
+
 ## Other notes
 The `setTimeout(()=>{...})` wrapping the insides of the `connectedCallback()` lifecycle method allows the script to be used as a non-module script tag (in addition to the module option) from anywhere on the page, including the header, by adding a ~4ms delay which should be enough for the DOM to be ready.
