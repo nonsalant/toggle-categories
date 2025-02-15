@@ -1,0 +1,181 @@
+toggle-categories {
+	display: block;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		&:not(ul ul) {
+			background-color: #88888830;
+			/* width: fit-content; */
+			margin-inline: auto;
+			padding-block-end: .25rem;
+		}
+		
+		li:not(li li) {
+			margin-block-end: .5rem;
+		}
+		
+		ul {
+			margin-block: .5rem;
+		}
+	}
+	
+	label { cursor: pointer; }
+	
+	/* category headings */
+	li:not(li li) > .toggle-input {
+		background-color: #88888840;
+		justify-content: space-between;
+		font-weight: bold;
+		
+		label:not(.toggle) {
+			padding-block: .25rem;
+		}
+		.toggle { 
+			--_height: .8rem;
+			--_color: light-dark(red, hotpink);
+		}
+		
+		&:hover .toggle {
+			@media (pointer: fine) {
+				/* --_slider-bg: oklch(from var(--_color) 60% 60% h); */
+				/* --_slider-active-bg: oklch(from var(--_color) 60% 40% h); */
+				--_slider-bg: var(--_color);
+				--_slider-active-bg: var(--_color);
+			}
+		}
+		
+	}
+	
+	.toggle-input { 
+		padding: .25rem .75rem;
+		display: flex;
+		align-items: center;
+
+		label {
+			&:hover { cursor: pointer; }
+			&:not(.toggle) { width: calc(100% - 2rem); }
+			&.toggle + label { padding-inline: .5rem 0; }
+			&:has(+ .toggle) { padding-inline: 0 .5rem; }
+		}
+		
+		&:has(input:focus-visible) label:not(.toggle) { 
+			outline: solid 2px var(--_color, #6666bbef);
+			outline-offset: -1px; 
+		}
+
+		.toggle {
+			--_color: #018259;
+			/* --_color: light-dark(#018259, #014f4b); */
+			--_color-active: light-dark(var(--_color), oklch(from var(--_color) 48% c h));
+			--_transition: transform 0.2s ease-in-out, background-color 0.2s linear;
+			--_height: 1rem;
+			--_padding: calc(var(--_height) / 9); /* eg: 2px */
+			--_width: calc(1.5 * (var(--_height) + var(--_padding))); /* 30px */
+			--_circle: calc(var(--_height) - (2 * var(--_padding))); /* 14px */
+			--_radius: calc(var(--_circle) + (2 * var(--_padding))); /* 18px */
+			--_distance: calc(var(--_width) - (2 * var(--_padding)) - var(--_circle)); /* 12px */
+			/* active colors */
+			--_slider-active-color: light-dark(#fff, #fff);
+			--_slider-active-bg: var(--_color);
+			/* default colors */
+			--_slider-color: light-dark(#fafafa, #ddd);
+			--_slider-bg: light-dark(oklch(from var(--_color) 39% 0 h), oklch(from oklch(from var(--_color) 39% 0 h) 48% c h));
+
+			width: var(--_width);
+			height: var(--_height);
+			position: relative;
+			display: inline-block;
+
+			/* hide the checkbox */
+			input { opacity: 0; width: 0; height: 0; }
+
+			/* focus state (moved to the wrapping element) */
+			/* &:has(input:focus-visible) .toggle-slider { 
+				outline: solid 2px var(--_color, #6666bbef);
+				outline-offset: 0.1rem; 
+			} */
+
+			/* default state */
+			.toggle-slider {
+				position: absolute;
+				inset: 0;
+				background-color: var(--_slider-bg);
+				border-radius: var(--_radius);
+				transition: var(--_transition);
+				&:before {
+					position: absolute;
+					content: "";
+					height: var(--_circle);
+					width: var(--_circle);
+					left: var(--_padding);
+					top: var(--_padding);
+					background-color: var(--_slider-color);
+					/* -webkit-transition: var(--_transition); */
+					transition: var(--_transition);
+					border-radius: 50%;
+				}
+			}
+
+			/* checked state */
+			input:checked + .toggle-slider {
+				background-color: var(--_slider-active-bg);
+				&:before {
+					transform: translateX(var(--_distance));
+					background-color: var(--_slider-active-color);
+				}
+			}
+
+			/* intermediate state */
+			input.only-some-active + .toggle-slider {
+				/* background-color: var(--_slider-bg); */
+				&:before {
+					transform: translateX(calc(var(--_distance) * .5));
+					border-radius: 3px;
+					height: calc(var(--_circle) / 6);
+					margin-top: calc(var(--_padding) * 3);
+				}
+			}
+
+		}
+	}
+	
+	li li .toggle-input {
+		&:hover .toggle {
+			@media (pointer: fine) {
+				/* --_slider-bg: oklch(from var(--_color) 40% 10% h); */
+				--_slider-active-bg: oklch(from var(--_color) 50% 10% h);
+				--_slider-bg:	light-dark(
+						oklch(from var(--_color) 60% 0% h), 
+					 	oklch(from var(--_color) 40% 0% h));
+			}
+		}
+	}
+
+	
+	/* component undefined (minimize FOUC) */
+	&:where(:not(:defined)) {
+		/* cat. headings*/
+		li:not(li li) > span {
+			padding: .5rem .75rem;
+			background-color: #88888840;
+			font-weight: bold;
+		}
+		
+		li li:not(:has(.toggle)) {
+			label {
+				display: block;
+				padding-block: .25rem;
+				padding-block: .218750rem;
+				/* padding-block: calc(.25rem * .875); */
+			}
+			[type=checkbox] {
+				margin-inline: 1.5rem .35rem;
+			}
+		}
+		
+	}
+	
+}
