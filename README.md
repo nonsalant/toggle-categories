@@ -20,7 +20,7 @@
 <script src="./src/toggle-categories.js"></script>
 ```
 
-The script can also be loaded as a module:
+- The script can also be loaded as a module:
 ```html
 <script src="./src/toggle-categories.js" type="module"></script>
 ```
@@ -47,11 +47,11 @@ The script can also be loaded as a module:
 </ul>
 </toggle-categories>
 ```
-- 3.1 Use the `checked` attribute to have an item pre-selected:
+- Use the `checked` attribute to have an item pre-selected:
 ```html
 <li><label><input type="checkbox" checked> Item</label></li>
 ```
-- 3.2 ID's are generated automatically for the checkboxes, but you can also set (some or all of) them manually:
+- ID's are generated automatically for the checkboxes, but you can also set (some or all of) them manually:
 ```html
 <li><label><input type="checkbox" id="item-1"> Item 1</label></li>
 ```
