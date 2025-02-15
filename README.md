@@ -60,12 +60,12 @@ The script can also be loaded as a module:
 You can override these CSS custom properties to change the appearance of the component by adding the following CSS anywhere:
 ```css
 toggle-categories ul {
-	--toggle-color: #018259;
-	--toggle-height: 1rem;
-	--toggle-categories-bg: #88888830;
-	--toggle-category-color: light-dark(red, hotpink);
-	--toggle-category-height: .8rem;
-	--toggle-categories--heading-bg: #88888840;
+    --toggle-color: #018259;
+    --toggle-height: 1rem;
+    --toggle-categories-bg: #88888830;
+    --toggle-category-color: light-dark(red, hotpink);
+    --toggle-category-height: .8rem;
+    --toggle-categories--heading-bg: #88888840;
 }
 ```
 Note: `ul` added in the selector above for extra specificity, to override the values set in toggle-categories.css.
