@@ -1,4 +1,9 @@
 toggle-categories {
+	--toggle-color: #018259;
+	--toggle-height: 1rem;
+	--toggle-category-color: light-dark(red, hotpink);
+	--toggle-category-height: .8rem;
+
 	display: block;
 	
 	ul {
@@ -34,8 +39,8 @@ toggle-categories {
 			padding-block: .25rem;
 		}
 		.toggle { 
-			--_height: .8rem;
-			--_color: light-dark(red, hotpink);
+			--_height: var(--toggle-category-height, .8rem);
+			--_color: var(--toggle-category-color, light-dark(red, hotpink));
 		}
 		
 		&:hover .toggle {
@@ -67,11 +72,10 @@ toggle-categories {
 		}
 
 		.toggle {
-			--_color: #018259;
-			/* --_color: light-dark(#018259, #014f4b); */
+			--_color: var(--toggle-color, light-dark(#018259, #014f4b));
 			--_color-active: light-dark(var(--_color), oklch(from var(--_color) 48% c h));
 			--_transition: transform 0.2s ease-in-out, background-color 0.2s linear;
-			--_height: 1rem;
+			--_height: var(--toggle-height, 1rem);
 			--_padding: calc(var(--_height) / 9); /* eg: 2px */
 			--_width: calc(1.5 * (var(--_height) + var(--_padding))); /* 30px */
 			--_circle: calc(var(--_height) - (2 * var(--_padding))); /* 14px */

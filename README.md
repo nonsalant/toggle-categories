@@ -1,6 +1,6 @@
 # `<toggle-categories>` Web Component <small>(no Shadow DOM)</small>
 
-"Toggles" that control categories of toggle switches with intermediary state for "only some active".
+"Toggles" that control categories of toggle switches with intermediary state for when only some subitems are active.
 
 - Using **Light DOM** allows you to style everything with regular CSS
 - Checkboxes fallback (for items only, category toggles need JS to show up at all)
