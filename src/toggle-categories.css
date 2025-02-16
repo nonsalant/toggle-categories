@@ -31,7 +31,7 @@ toggle-categories {
 	
 	label { cursor: pointer; }
 	
-	/* category headings */
+	/* cat. headings */
 	li:not(li li) > .toggle-input {
 		background-color: var(--toggle-categories--heading-bg, #88888840);
 		justify-content: space-between;
@@ -148,6 +148,7 @@ toggle-categories {
 		}
 	}
 	
+	/* items */
 	li li .toggle-input {
 		&:hover .toggle {
 			@media (pointer: fine) {
@@ -160,8 +161,9 @@ toggle-categories {
 		}
 	}
 
-	
+
 	/* component undefined (minimize FOUC) */
+	
 	&:where(:not(:defined)) {
 		/* cat. headings*/
 		li:not(li li) > span {
@@ -169,20 +171,18 @@ toggle-categories {
 			padding: .5rem .75rem;
 			background-color: #88888840;
 			font-weight: bold;
+			margin-block-end: -1.5px;
 		}
-		
+		/* items */
 		li li:not(:has(.toggle)) {
 			label {
 				display: block;
 				padding-block: .25rem;
-				padding-block: .218750rem;
-				/* padding-block: calc(.25rem * .875); */
 			}
 			[type=checkbox] {
 				margin-inline: 1.5rem .35rem;
 			}
 		}
-		
 	}
 	
 }
