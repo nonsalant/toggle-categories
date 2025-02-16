@@ -1,10 +1,10 @@
 toggle-categories {
-	--toggle-color: #018259;
-	--toggle-height: 1rem;
-	--toggle-categories-bg: #88888830;
 	--toggle-category-color: light-dark(red, hotpink);
+	--toggle-color: #018259;
 	--toggle-category-height: .8rem;
-	--toggle-categories--heading-bg: #88888840;
+	--toggle-height: 1rem;
+	--toggle-categories--heading-bg: light-dark(#ddd, #333);
+	--toggle-categories-bg: light-dark(#f0f0f0, #222);
 	
 	display: block;
 	
@@ -163,7 +163,7 @@ toggle-categories {
 
 
 	/* component undefined (minimize FOUC) */
-	
+
 	&:where(:not(:defined)) {
 		/* cat. headings*/
 		li:not(li li) > span {
