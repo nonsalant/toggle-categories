@@ -165,6 +165,7 @@ toggle-categories {
 	&:where(:not(:defined)) {
 		/* cat. headings*/
 		li:not(li li) > span {
+			display:  block;
 			padding: .5rem .75rem;
 			background-color: #88888840;
 			font-weight: bold;
