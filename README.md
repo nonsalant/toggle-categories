@@ -71,4 +71,4 @@ toggle-categories ul {
 Note: `ul` added in the selector above for extra specificity, to override the values set in toggle-categories.css.
 
 ## Other notes
-The `setTimeout(()=>{...})` wrapping the insides of the `connectedCallback()` lifecycle method allows the script to be used as a non-module script tag (in addition to the module option) from anywhere on the page, including the header, by adding a ~4ms delay which should be enough for the DOM to be ready.
+The `setTimeout(()=>{...})` wrapping the insides of the `connectedCallback()` lifecycle method allows the script to be used as a non-module script tag (in addition to the module option) from anywhere on the page, including the document head, by adding a ~4ms delay which should be enough for the DOM to be ready.
