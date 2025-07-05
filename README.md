@@ -57,7 +57,9 @@
 ```
 
 ## Styling
-You can override these CSS custom properties to change the appearance of the component by adding the following CSS anywhere:
+You can use regular CSS to style everything since the custom element does not use Shadow DOM.
+
+You can also override these CSS custom properties to change the appearance of the component by adding the following CSS anywhere:
 ```css
 toggle-categories ul {
     --toggle-category-color: light-dark(red, hotpink);
