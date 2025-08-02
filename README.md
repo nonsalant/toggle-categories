@@ -10,6 +10,10 @@
 
 [https://codepen.io/nonsalant/pen/OPJLJoL](https://codepen.io/nonsalant/pen/OPJLJoL)
 
+[![recording from the codepen demo](demo/toggle-categories.gif)](https://codepen.io/nonsalant/pen/OPJLJoL)
+
+*Dark mode demo of an indeterminate state for category toggles when only some subitems are active.*
+
 ## Installation
 
 ### Via CDN
