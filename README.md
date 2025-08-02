@@ -10,11 +10,27 @@
 
 [https://codepen.io/nonsalant/pen/OPJLJoL](https://codepen.io/nonsalant/pen/OPJLJoL)
 
-## Usage
+## Installation
+
+### Via CDN
+
+Load the style and the main script in your `head` or anywhere in the `body`:
+```html
+<link rel="stylesheet" href="https://rawcdn.githack.com/nonsalant/toggle-categories/b5ae3ccee6124f878e79dc78381a8d09403f505e/src/toggle-categories.css">
+<script src="https://rawcdn.githack.com/nonsalant/toggle-categories/b5ae3ccee6124f878e79dc78381a8d09403f505e/src/toggle-categories.js"></script>
+```
+
+CDN demo: https://codepen.io/nonsalant/pen/MYapmzR/bf1a11a33025524b17cdbe6ff9e3bb71
+
+- The script can also be loaded as a module:
+```html
+<script type="module" src="https://rawcdn.githack.com/nonsalant/toggle-categories/b5ae3ccee6124f878e79dc78381a8d09403f505e/src/toggle-categories.js"></script>
+```
+
+### From local files
 
 1. Grab the files from the <code>src</code> folder.
-
-2. Load the style and the main script (adjust the paths as needed):
+2. Load the style and the main script in your `head` or anywhere in the `body` (adjust the paths as needed):
 ```html
 <link rel="stylesheet" href="./src/toggle-categories.css">
 <script src="./src/toggle-categories.js"></script>
@@ -22,29 +38,31 @@
 
 - The script can also be loaded as a module:
 ```html
-<script src="./src/toggle-categories.js" type="module"></script>
+<script type="module" src="./src/toggle-categories.js"></script>
 ```
 
-3. Use it like this:
+## Usage
+
+Use it like this:
 ```html
 <toggle-categories>
-<ul>
-    <li>
-        <span>Category Name</span>
-        <ul>
-        <li><label><input type="checkbox"> Item 1</label></li>
-        <li><label><input type="checkbox"> Item 2</label></li>
-        </ul>
-    </li>
-    <li>
-        <span>Other Category Name</span>
-        <ul>
-        <li><label><input type="checkbox"> Item 3</label></li>
-        <li><label><input type="checkbox"> Item 4</label></li>
-        <li><label><input type="checkbox"> Item 5</label></li>
-        </ul>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <span>Category Name</span>
+            <ul>
+            <li><label><input type="checkbox"> Item 1</label></li>
+            <li><label><input type="checkbox"> Item 2</label></li>
+            </ul>
+        </li>
+        <li>
+            <span>Other Category Name</span>
+            <ul>
+            <li><label><input type="checkbox"> Item 3</label></li>
+            <li><label><input type="checkbox"> Item 4</label></li>
+            <li><label><input type="checkbox"> Item 5</label></li>
+            </ul>
+        </li>
+    </ul>
 </toggle-categories>
 ```
 - Use the `checked` attribute to have an item pre-selected:
